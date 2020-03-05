@@ -1,12 +1,14 @@
 # Jebs Reading App
 
-This project cotnains a template for Jebs Reading Game sprint.
+This project contains a template for Jebs Reading Game sprint.
 
 ## Getting Started
 
-Clone a repo or download zip and extract to the location of your Unity projcets.
-An initial scene containing the OVR setup is included for you to build. Additional
-instructions are included in the project.
+Clone a repo or download zip and extract to the location of your Unity projects.
+
+An initial scene containing the OVR setup is included for you to build.
+
+Additional instructions are included in the project.
 
 ### Prerequisites
 
@@ -14,6 +16,15 @@ instructions are included in the project.
 Unity Version 2019.3.3f1 
 (Download through Unity Hub) 
 ```
+
+### Built With
+
+This Unity project uses the following:
+
+* [Unity 2019.3.1f1](https://unity3d.com/es/get-unity/download/archive)
+* [Oculus Integration 13.0](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022)
+* [Unity XR 1.0.0](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples)
+* [VRTK Prefabs Package 1.1.3](https://www.npmjs.com/package/io.extendreality.vrtk.prefabs)
 
 ### Installing
 
