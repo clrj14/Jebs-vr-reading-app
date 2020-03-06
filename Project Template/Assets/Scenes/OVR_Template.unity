@@ -274,7 +274,7 @@ MonoBehaviour:
     Integration. It is currently set up for both hands and controllers. If you are
     unfamiliar with the new hand tracking feel free to check out this video: \r\n\r\nhttps://www.youtube.com/watch?v=vSia7t_WlbQ\r\n\r\nIt's
     important to note that hand tracking is not required. You are also able to use
-    VRTK if you wish. Please do not implement locomotion for this sprint. \r\n\r\nIf
+    VRTK if you wish. Please do not implement locomotion for this sprint. \n\r\nIf
     you have any questions or recommendations, please reach out in the Discord. Check
     the announcements channel for additional information and updates for submissions.
     Thank you for participating and good luck!\r\n\r\n-Cody "
