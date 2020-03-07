@@ -277,7 +277,8 @@ MonoBehaviour:
     VRTK if you wish. Please do not implement locomotion for this sprint. \n\r\nIf
     you have any questions or recommendations, please reach out in the Discord. Check
     the announcements channel for additional information and updates for submissions.
-    Thank you for participating and good luck!\r\n\r\n-Cody "
+    Thank you for participating and good luck!\r\n\n\n-Cody \n\n\nAdditional Resources:
+    \n\nhttps://github.com/ExtendRealityLtd\n\nhttps://github.com/jorgejgnz/HandTrackingGestureRecorder\n\nhttps://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@0.9/manual/index.html"
 --- !u!4 &407616503
 Transform:
   m_ObjectHideFlags: 0

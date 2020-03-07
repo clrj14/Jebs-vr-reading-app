@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class read_me : MonoBehaviour
 {
-    [TextArea(20, 20)]
+    [TextArea(30, 30)]
     public string Notes = "";
 }
