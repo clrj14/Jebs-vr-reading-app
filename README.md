@@ -10,6 +10,8 @@ An initial scene containing the OVR setup is included for you to build.
 
 Additional instructions are included in the project.
 
+[Video Tutorial](https://youtu.be/jBwjTAKmP7A)
+
 ### Prerequisites
 
 ```
