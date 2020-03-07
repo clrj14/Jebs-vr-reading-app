@@ -27,6 +27,7 @@ This Unity project uses the following:
 * [Oculus Integration 13.0](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022)
 * [Unity XR 1.0.0](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples)
 * [VRTK Prefabs Package 1.1.3](https://www.npmjs.com/package/io.extendreality.vrtk.prefabs)
+* [Hand Tracking Gesture Recorder](https://github.com/jorgejgnz/HandTrackingGestureRecorder)
 
 ### Installing
 
