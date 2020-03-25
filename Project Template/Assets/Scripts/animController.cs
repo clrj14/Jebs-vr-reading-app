@@ -8,6 +8,10 @@ public class animController : MonoBehaviour
     public GameObject chestTop;
     public bool isOpen = false;
     private Animator animator;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip chestOpen;
+    [SerializeField] AudioClip chestClose;
+
 
     private void Awake()
     {
@@ -16,10 +20,16 @@ public class animController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!isOpen)
+        if (other.CompareTag("MainCamera"))
         {
-            animator.Play("Open");
-            isOpen = true;
+            if (!isOpen)
+            {
+                audioSource.clip = chestOpen;
+                animator.Play("Open");
+                print("aniamation open");
+                audioSource.Play();
+                isOpen = true;
+            }
         }
     }
 
@@ -29,7 +39,10 @@ public class animController : MonoBehaviour
         {
             if (isOpen)
             {
+                audioSource.clip = chestClose;
                 animator.Play("Close");
+                print("aniamation closed");
+                audioSource.Play();
                 isOpen = false;
             }
         }
