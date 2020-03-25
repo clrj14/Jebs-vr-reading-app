@@ -5174,6 +5174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPointPrefab: {fileID: 1325160529014296994, guid: 5d8db8a5d47afcc45b9d48d20485c521,
     type: 3}
+  hasHit: 0
+  health: 100
 --- !u!135 &1924207203
 SphereCollider:
   m_ObjectHideFlags: 0
