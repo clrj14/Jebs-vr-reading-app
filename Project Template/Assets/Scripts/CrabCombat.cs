@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CrabCombat : MonoBehaviour
 {
-
-    [SerializeField] private GameObject hitPointPrefab;
+    //[SerializeField] private GameObject hitPointPrefab;
+    [SerializeField] private GameObject hitParticle;
     [SerializeField] private bool hasHit = false;
     [SerializeField] private int health = 100;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] hitAudioClips;
     public bool isDead = false;
 
 
@@ -19,16 +21,24 @@ public class CrabCombat : MonoBehaviour
             ContactPoint hitPoint = collision.GetContact(0);
 
             //Instantiate tiny sphere at hit location. 
-            GameObject hitLocation = Instantiate(hitPointPrefab, hitPoint.point, Quaternion.identity);
+            //GameObject hitLocation = Instantiate(hitPointPrefab, hitPoint.point, Quaternion.identity);
+            SelectRandomClip();
+            audioSource.Play();
+            hitParticle.transform.position = hitPoint.point;
+            hitParticle.GetComponent<ParticleSystem>().Play();
 
             //parent the hit sphere so we know where it was hit. 
-            hitLocation.transform.parent = this.transform;
+            //hitLocation.transform.parent = this.transform;
 
             hasHit = true;
 
-            print("hit");
             SubtractHealth();
         }
+    }
+
+    private void SelectRandomClip()
+    {
+        audioSource.clip = hitAudioClips[Random.Range(0, hitAudioClips.Length)];
     }
 
     //Subtracting health
