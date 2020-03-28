@@ -8,6 +8,7 @@ public class CrabCombat : MonoBehaviour
     [SerializeField] private GameObject hitPointPrefab;
     [SerializeField] private bool hasHit = false;
     [SerializeField] private int health = 100;
+    public bool isDead = false;
 
 
     void OnCollisionEnter(Collision collision)
@@ -39,6 +40,7 @@ public class CrabCombat : MonoBehaviour
         //Check if dead
         if(health <= 0)
         {
+            isDead = true;
             DestroyCrab();
         }
     }

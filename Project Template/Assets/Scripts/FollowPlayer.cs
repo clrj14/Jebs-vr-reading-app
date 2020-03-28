@@ -19,7 +19,7 @@ public class FollowPlayer : MonoBehaviour
     {
         //Super inefficient!! Just doing this for testing.
         player = GameObject.Find("Main Camera").transform;
-        crabSpawnPoint = GameObject.Find("Crab Spawn Point").transform;
+
     }
 
     void FixedUpdate()
