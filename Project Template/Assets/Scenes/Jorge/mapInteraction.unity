@@ -2075,6 +2075,10 @@ MonoBehaviour:
   A: {fileID: 1717954560808476267}
   B: {fileID: 1717954560808476266}
   lookAt: {fileID: 1717954560808476266}
+  axisRelationX: 0
+  axisRelationY: 0
+  axisRelationZ: 1
+  rotationOffset: {x: 0, y: 0, z: 0}
   currentDistance: 0
 --- !u!95 &1149691579
 Animator:
