@@ -31,6 +31,12 @@ public class MapLogic : MonoBehaviour
     public BooleanAction grippingR;
     public BooleanAction mapUnrolled;
 
+    [Header("Events")]
+    public UnityEngine.Events.UnityEvent onInvisible;
+    public UnityEngine.Events.UnityEvent onVisible;
+    public UnityEngine.Events.UnityEvent onAnimated;
+    public UnityEngine.Events.UnityEvent onHeld;
+
     [Header("Debugging")]
     public string stringCurrentState;
     public bool _bothInTrigger;
@@ -38,7 +44,28 @@ public class MapLogic : MonoBehaviour
     public bool _grippingR;
     public bool _mapUnrolled;
     
-    MapState currentState;
+    MapState currentState {
+        get { return _currentState; }
+        set {
+            _currentState = value;
+            switch (value)
+            {
+                case MapState.Invisible:
+                    onInvisible.Invoke();
+                    break;
+                case MapState.Visible:
+                    onVisible.Invoke();
+                    break;
+                case MapState.Animated:
+                    onAnimated.Invoke();
+                    break;
+                case MapState.Held:
+                    onHeld.Invoke();
+                    break;
+            }
+        }
+    }
+    MapState _currentState;
 
     private void Start()
     {
@@ -50,6 +77,14 @@ public class MapLogic : MonoBehaviour
         mapCentroidConstraint.enabled = true;
 
         RecalculateState();
+    }
+
+    private void Update()
+    {
+        _bothInTrigger = bothInTrigger.Value;
+        _grippingL = grippingL.Value;
+        _grippingR = grippingR.Value;
+        _mapUnrolled = mapUnrolled.Value;
     }
 
     public void RecalculateState()
@@ -134,10 +169,5 @@ public class MapLogic : MonoBehaviour
 
         //Debugging
         stringCurrentState = currentState.ToString();
-        _bothInTrigger = bothInTrigger.Value;
-        _grippingL = grippingL.Value;
-        _grippingR = grippingR.Value;
-        _mapUnrolled = mapUnrolled.Value;
-
     }
 }

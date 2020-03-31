@@ -56,7 +56,7 @@ namespace JorgeJGnz {
             Vector3 receiverAngles = receiver.eulerAngles;
             Quaternion meanRotation = Quaternion.Lerp(A.rotation, B.rotation, 0.5f);
 
-            ApplyRotRelations(receiverAngles,meanRotation);
+            receiverAngles = TransformRot(receiverAngles,meanRotation);
 
             receiverAngles += rotationOffset;
 
@@ -68,46 +68,48 @@ namespace JorgeJGnz {
             Receive(currentDistance);
         }
 
-        void ApplyRotRelations(Vector3 receiverAngles, Quaternion meanRotation)
+        Vector3 TransformRot(Vector3 receiverAngles, Quaternion rotation)
         {
             switch (axisRelationX)
             {
                 case Axis.X:
-                    receiverAngles.x = meanRotation.eulerAngles.x;
+                    receiverAngles.x = rotation.eulerAngles.x;
                     break;
                 case Axis.Y:
-                    receiverAngles.x = meanRotation.eulerAngles.y;
+                    receiverAngles.x = rotation.eulerAngles.y;
                     break;
                 case Axis.Z:
-                    receiverAngles.x = meanRotation.eulerAngles.z;
+                    receiverAngles.x = rotation.eulerAngles.z;
                     break;
             }
 
             switch (axisRelationY)
             {
                 case Axis.X:
-                    receiverAngles.y = meanRotation.eulerAngles.x;
+                    receiverAngles.y = rotation.eulerAngles.x;
                     break;
                 case Axis.Y:
-                    receiverAngles.y = meanRotation.eulerAngles.y;
+                    receiverAngles.y = rotation.eulerAngles.y;
                     break;
                 case Axis.Z:
-                    receiverAngles.y = meanRotation.eulerAngles.z;
+                    receiverAngles.y = rotation.eulerAngles.z;
                     break;
             }
 
             switch (axisRelationZ)
             {
                 case Axis.X:
-                    receiverAngles.z = meanRotation.eulerAngles.x;
+                    receiverAngles.z = rotation.eulerAngles.x;
                     break;
                 case Axis.Y:
-                    receiverAngles.z = meanRotation.eulerAngles.y;
+                    receiverAngles.z = rotation.eulerAngles.y;
                     break;
                 case Axis.Z:
-                    receiverAngles.z = meanRotation.eulerAngles.z;
+                    receiverAngles.z = rotation.eulerAngles.z;
                     break;
             }
+
+            return receiverAngles;
         }
 
     }

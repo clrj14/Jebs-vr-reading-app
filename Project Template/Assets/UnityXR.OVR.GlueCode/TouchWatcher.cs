@@ -1,18 +1,9 @@
-﻿using Malimbe.PropertySerializationAttribute;
-using Malimbe.XmlDocumentationAttribute;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.XR;
 using Zinnia.Action;
 
-public enum Usage
-{
-    Trigger,
-    Grip
-}
-
-public class ButtonWatcher : BooleanAction
+public class TouchWatcher : BooleanAction
 {
     [Header("Listen to")]
     public UnityEngine.XR.XRNode node = UnityEngine.XR.XRNode.LeftHand;
@@ -30,7 +21,7 @@ public class ButtonWatcher : BooleanAction
     void Update()
     {
         var devices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(node,devices);
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(node, devices);
 
         // If there is only one instance for this controller
         if (devices.Count == 1)
@@ -38,12 +29,13 @@ public class ButtonWatcher : BooleanAction
             device = devices[0];
 
             // We read different attributes of the class CommonUsages according to "usage" desired
-            switch (usage){
+            switch (usage)
+            {
                 case Usage.Trigger:
-                    successfulReading = device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out retrievedState);
+                    successfulReading = device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryTouch, out retrievedState);
                     break;
                 case Usage.Grip:
-                    successfulReading = device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.gripButton, out retrievedState);
+                    successfulReading = device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryTouch, out retrievedState);
                     break;
                 default:
                     successfulReading = false;
@@ -57,7 +49,7 @@ public class ButtonWatcher : BooleanAction
                 if (retrievedState && !savedState)
                 {
                     savedState = true;
-                    Debug.Log("Trigger button is pressed");
+                    Debug.Log("Trigger button is touched");
                     Receive(true);
                 }
 
@@ -65,7 +57,7 @@ public class ButtonWatcher : BooleanAction
                 if (!retrievedState && savedState)
                 {
                     savedState = false;
-                    Debug.Log("Trigger button is unpressed");
+                    Debug.Log("Trigger button is untouched");
                     Receive(false);
                 }
             }
