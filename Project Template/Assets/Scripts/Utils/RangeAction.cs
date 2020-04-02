@@ -32,7 +32,7 @@ namespace JorgeJGnz
         // Update is called once per frame
         public void DoTransform(float receivedValue)
         {
-            if (receivedValue < minTheresold)
+            if (receivedValue <= minTheresold)
             {
                 currentNormalizedValue = 0.0f;
 
@@ -52,7 +52,7 @@ namespace JorgeJGnz
                     onNominalReached.Invoke(currentNormalizedValue);
                 }
             }
-            else if (receivedValue > maxTheresold)
+            else if (receivedValue >= maxTheresold)
             {
                 currentNormalizedValue = 1.0f;
 
