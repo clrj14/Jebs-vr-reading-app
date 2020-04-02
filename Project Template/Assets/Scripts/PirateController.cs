@@ -174,6 +174,7 @@ public class PirateController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        
         if (other.tag == "MainCamera")
         {
             if (!isTutorialComplete)
