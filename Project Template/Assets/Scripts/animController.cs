@@ -26,7 +26,6 @@ public class animController : MonoBehaviour
             {
                 audioSource.clip = chestOpen;
                 animator.Play("Open");
-                print("aniamation open");
                 audioSource.Play();
                 isOpen = true;
             }
@@ -41,7 +40,6 @@ public class animController : MonoBehaviour
             {
                 audioSource.clip = chestClose;
                 animator.Play("Close");
-                print("aniamation closed");
                 audioSource.Play();
                 isOpen = false;
             }
