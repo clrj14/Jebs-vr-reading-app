@@ -11,7 +11,6 @@ public class animController : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip chestOpen;
     [SerializeField] AudioClip chestClose;
-    [SerializeField] Light chestLight;
 
 
     private void Awake()
@@ -30,11 +29,6 @@ public class animController : MonoBehaviour
                 audioSource.Play();
                 isOpen = true;
             }
-
-            if (isOpen)
-            {
-                chestLight.enabled = true;
-            }
         }
     }
 
@@ -48,7 +42,6 @@ public class animController : MonoBehaviour
                 animator.Play("Close");
                 audioSource.Play();
                 isOpen = false;
-                chestLight.enabled = false;
             }
         }
     }
