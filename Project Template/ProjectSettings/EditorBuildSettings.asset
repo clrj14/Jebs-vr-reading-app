@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cody/GrabMechanics.unity
     guid: 297b75ea9c6560d4a97234e01ffc8784
   - enabled: 0
-    path: Assets/Scenes/Jorge/holstersInteraction.unity
+    path: Assets/Scenes/Jorge/MapAndHolstersInteraction.unity
     guid: 69b4aaeb6c7bc82499c1d0566145d5b9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cody/Environment.unity
     guid: c5d0beece19461a4cb23d140b07cc3a0
+  - enabled: 1
+    path: Assets/Scenes/Jorge/letterGrabbing.unity
+    guid: 97d392c0159e3d446b64d41096c7a887
   m_configObjects: {}
