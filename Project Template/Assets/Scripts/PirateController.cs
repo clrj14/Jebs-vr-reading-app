@@ -51,7 +51,9 @@ public class PirateController : MonoBehaviour
     [SerializeField] private float waitTime = 1f;
     [SerializeField] private float crabDelay = 1f;
     [SerializeField] private GameObject tutorialCrab;
+    public string currentLetter = null; 
 
+    
 
     private void TutorialCheck()
     {
@@ -105,7 +107,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = a;
             audioSource.Play();
-            aIsComplete = true;
+            //aIsComplete = true;
+            currentLetter = "a";
             return;
         }
 
@@ -113,7 +116,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = b;
             audioSource.Play();
-            bIsComplete = true;
+            //bIsComplete = true;
+            currentLetter = "b";
             return;
         }
 
@@ -121,7 +125,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = c;
             audioSource.Play();
-            cIsComplete = true;
+            //cIsComplete = true;
+            currentLetter = "c";
             return;
         }
 
@@ -129,7 +134,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = d;
             audioSource.Play();
-            dIsComplete = true;
+            //dIsComplete = true;
+            currentLetter = "d";
             return;
         }
 
@@ -137,7 +143,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = e;
             audioSource.Play();
-            eIsComplete = true;
+            //eIsComplete = true;
+            currentLetter = "e";
             return;
         }
 
@@ -145,7 +152,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = f;
             audioSource.Play();
-            fIsComplete = true;
+            //fIsComplete = true;
+            currentLetter = "f";
             return;
         }
 
@@ -153,7 +161,8 @@ public class PirateController : MonoBehaviour
         {
             audioSource.clip = g;
             audioSource.Play();
-            gIsComplete = true;
+            //gIsComplete = true;
+            currentLetter = "g";
             return;
         }
     }
@@ -168,7 +177,7 @@ public class PirateController : MonoBehaviour
                 return;
             }
 
-            //LetterCheck();
+            LetterCheck();
         }
     }
 

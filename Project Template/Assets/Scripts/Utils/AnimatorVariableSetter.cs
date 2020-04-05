@@ -14,6 +14,20 @@ namespace JorgeJGnz
         public string nameOfFloatVar;
         public string nameOfBoolVar;
 
+        public LetterCheck letterCheck;
+
+        public void SetAnimatorVar(int value)
+        {
+            if (!letterCheck.currentLetter.Equals(letterCheck.letterInChest))
+            {
+                animator.SetInteger(nameOfIntVar, 0);
+            }
+            else
+            {
+                animator.SetInteger(nameOfIntVar, value);
+            }
+        }
+
         public void SetInt(int value)
         {
             animator.SetInteger(nameOfIntVar, value);
